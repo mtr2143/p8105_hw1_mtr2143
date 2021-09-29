@@ -46,4 +46,16 @@ mean(pull(prob_1_df, citrus))
 We are able to take the means of our numeric and logical vectors but not the
 character and factor vectors. 
 
+###### Converting columns to numeric:
+
+```{r problem_1: convert to numeric, results='hide', warning=FALSE}
+as.numeric(pull(prob_1_df, greater_than_0))
+as.numeric(pull(prob_1_df, housewives))
+as.numeric(pull(prob_1_df, citrus))
+```
+The logical vector can be converted to a numeric vector because it's binary: false goes to 0
+and true goes to 1. The factor vector can be converted to a numeric vector because each factor is
+changed to its corresponding level. Character vectors cannot be converted to a numeric vector because
+they do not represent numeric values. It helps explain why we're able to get a mean for the
+logical vector since the T/F go to 1/0, so our mean is the number of true values divided by the number of total values. To get the mean for a factor vector, we'd need to convert it to a numeric vector and then take the mean. 
 
