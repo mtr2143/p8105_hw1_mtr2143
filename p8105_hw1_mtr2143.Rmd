@@ -78,4 +78,10 @@ There are `r nrow(penguins)` rows and `r ncol(penguins)` columns in the penguins
 
 The mean flipper length (mm) is `r mean(pull(penguins, flipper_length_mm), na.rm = T)` after excluding two NAs.
 
+###### Flipper Length (mm) by Bill Length (mm) Plot:
 
+```{r problem_2: scatterplot, warning=FALSE}
+
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+ggsave("penguins_flipper_vs_bill_length.png", height = 4, width = 6)
+```
