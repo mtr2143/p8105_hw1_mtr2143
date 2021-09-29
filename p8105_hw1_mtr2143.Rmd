@@ -74,5 +74,8 @@ found on `r length(unique(pull(penguins, island)))` islands (`r unique(pull(peng
 
 There are `r nrow(penguins)` rows and `r ncol(penguins)` columns in the penguins data frame.
 
+###### Mean flipper length (mm):
+
+The mean flipper length (mm) is `r mean(pull(penguins, flipper_length_mm), na.rm = T)` after excluding two NAs.
 
 
