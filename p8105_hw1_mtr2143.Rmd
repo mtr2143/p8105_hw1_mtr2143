@@ -8,3 +8,24 @@ output: github_document
 ```{r setup, include = FALSE}
 library(tidyverse)
 ```
+
+# Problem 1
+
+###### Creating a data frame with 4 columns:
+* a random sample of size 10 from a standard Normal distribution
+* a logical vector indicating whether elements of the sample are greater than 0
+* a character vector of length 10
+* a factor vector of length 10, with 3 different factor “levels”
+
+```{r problem_1}
+set.seed(12551)
+
+prob_1_df <- tibble(
+  rand_norm_10 = rnorm(10),
+  greater_than_0 = rand_norm_10 > 0,
+  housewives = c("kyle", "kenya", "vicki", "cynthia", "eileen", "dorit", "jeana",
+                 "phaedra", "sutton", "garcelle"),
+  citrus = factor(c(rep("lemon", 3), rep("lime", 3), rep("orange", 4)))
+)
+
+```
