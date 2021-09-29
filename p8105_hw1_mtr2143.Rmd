@@ -59,3 +59,15 @@ changed to its corresponding level. Character vectors cannot be converted to a n
 they do not represent numeric values. It helps explain why we're able to get a mean for the
 logical vector since the T/F go to 1/0, so our mean is the number of true values divided by the number of total values. To get the mean for a factor vector, we'd need to convert it to a numeric vector and then take the mean. 
 
+###### Loading 'Penguins' data and data description:
+
+```{r problem_2: load and describe data, collapse=TRUE}
+data("penguins", package = "palmerpenguins")
+```
+
+This data include the following information about penguins: `r colnames(penguins)`. There are 
+`r length(unique(pull(penguins, species)))` species of penguins (`r unique(pull(penguins, species))`)
+found on `r length(unique(pull(penguins, island)))` islands (`r unique(pull(penguins, island))`) from
+`r min(pull(penguins, year))` to `r max(pull(penguins, year))`.
+
+
